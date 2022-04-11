@@ -1,7 +1,7 @@
 # Neural-information-processing-and-computations-of-two-input-synapses
 This repository contains simulation code for reproducing figures from the following manuscript which is currently under peer review:
 
-Soon Ho Kim, JunHyuk Woo, Kiri Choi, MooYoung Choi, and Kyungreem Han, (2022) 
+Kim, S. H., Woo, J.H., Choi, K., Choi, M.Y., & Han, K. (2022).
 Neural information processing and computations of two-input synapses. _Neural Computation, Under Review_.
 
 ## Required Installations
