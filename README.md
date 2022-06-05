@@ -45,4 +45,4 @@ python3 run_Fig2B.py 1 0
 
 ## Figure 4
 
-This code trains autoencoders based on the architecture of Hinton & Salakhutdinov (Hinton, G. E., & Salakhutdinov, R. R. (2006). Reducing the dimensionality of data with neural networks. science, 313(5786), 504-507.) with a mixture of neurons with two types of activation functions described in the paper. The model is trained on the [Fashion MNIST dataset](https://github.com/zalandoresearch/fashion-mnist).
+This code trains autoencoders based on the architecture of Hinton & Salakhutdinov (Hinton, G. E., & Salakhutdinov, R. R. (2006). Reducing the dimensionality of data with neural networks. science, 313(5786), 504-507.) with a mixture of neurons with two types of activation functions described in the paper. The model is trained on the [Fashion MNIST dataset](https://github.com/zalandoresearch/fashion-mnist). To train and evaluate the model, run the Juptyer notebook ```Fig4/Fig4B.ipynb```. Requires [Tensorflow](https://www.tensorflow.org/install) (only tested on v. 2.0.0).
