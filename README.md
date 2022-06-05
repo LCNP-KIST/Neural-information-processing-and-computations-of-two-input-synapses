@@ -10,7 +10,7 @@ The code in ```Fig2BandFigC``` and ```Fig3C``` requires installation of [NEURON]
 
 ## Figures 2B, 3B and 3C
 
-Simulations are based on the pyramidal neuron model developed by Wilmes et al. (Wilmes, K. A., Sprekeler, H., & Schreiber, S. (2016). Inhibition as a binary switch for excitatory plasticity in pyramidal neurons. PLoS computational biology, 12(3), e1004768.) and uses code from ModelDB Accession number [187603](https://senselab.med.yale.edu/ModelDB/ShowModel?model=187603#tabs-1). Figure 3 additionally uses code from ModelDB Accession number [185350](https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=185350#tabs-1) to model synapses.
+Simulations are based on the pyramidal neuron model developed by Wilmes et al. (Wilmes, K. A., Sprekeler, H., & Schreiber, S. (2016). Inhibition as a binary switch for excitatory plasticity in pyramidal neurons. PLoS computational biology, 12(3), e1004768.) and uses code from ModelDB Accession number [187603](https://senselab.med.yale.edu/ModelDB/ShowModel?model=187603#tabs-1). Figure 3 additionally uses code from ModelDB Accession number [185350](https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=185350#tabs-1) to model synapses (Jedlicka, P., Benuskova, L., Abraham, W.C. (2015). A Voltage-Based STDP Rule Combined with Fast BCM-Like Metaplasticity Accounts for LTP and Concurrent "Heterosynaptic" LTD in the Dentate Gyrus In Vivo. PLoS Comput Biol 11, e1004588.
 
 To run simulations, first compile the ```.mod``` files:
 
