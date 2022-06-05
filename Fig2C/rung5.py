@@ -1,12 +1,5 @@
 #!/usr/bin/env python
 
-"""produces voltage and current traces for Figure 1B-E"""
-
-# _title_     : model_stim.py
-# _author_     : Katharina Anna Wilmes
-# _mail_     : katharina.anna.wilmes __at__ cms.hu-berlin.de
-
-
 # --Imports--
 import sys
 import os
@@ -37,7 +30,7 @@ PTAU = 20
 DTAU = 70
 
 
-path = 'datag5/'
+path = 'data/'
 
 SCEN = 11
 NO_REPS = 1
