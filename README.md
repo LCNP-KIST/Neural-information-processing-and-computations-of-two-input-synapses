@@ -8,7 +8,7 @@ Neural information processing and computations of two-input synapses. _Neural Co
 
 The code in ```Fig2BandFigC``` and ```Fig3C``` requires installation of [NEURON](https://neuron.yale.edu/neuron/download) (Python v. 3.7.10 and NEURON v. 7.8.1 was used). Code in ```Fig4``` requires [Tensorflow](https://www.tensorflow.org/install) (v. 2.0.0).
 
-## Figures 2B, 3B and C
+## Figures 2B, 3B and 3C
 
 Simulations are based on the pyramidal neuron model developed by Wilmes et al. (Wilmes, K. A., Sprekeler, H., & Schreiber, S. (2016). Inhibition as a binary switch for excitatory plasticity in pyramidal neurons. PLoS computational biology, 12(3), e1004768.) and uses code from ModelDB Accession number [187603](https://senselab.med.yale.edu/ModelDB/ShowModel?model=187603#tabs-1).
 
