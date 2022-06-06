@@ -40,7 +40,7 @@ def pexec(args):
     alpha = alphali[alphaidx]
     
     ### Output directory
-    path = 'data1/'
+    path = 'data_Fig5/'
     identifier = '%s_%s'%(args[0],args[1])
     savepath = '%s%s'%(path,identifier)
     if not os.path.exists(path):

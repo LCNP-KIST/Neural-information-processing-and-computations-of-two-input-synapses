@@ -6,16 +6,16 @@ Neural information processing and computations of two-input synapses. _Neural Co
 
 ## Required Installations
 
-The code in ```Fig2BandFigC``` and ```Fig3C``` requires installation of [NEURON](https://neuron.yale.edu/neuron/download) (Python v. 3.7.10 and NEURON v. 7.8.1 was used) and [NeuroTools](https://pypi.org/project/NeuroTools/) (v. 0.3.0). Code in ```Fig4``` requires [Tensorflow](https://www.tensorflow.org/install) (v. 2.0.0).
+The code in ```Fig2B_Fig3_Fig5``` and ```Fig3C``` requires installation of [NEURON](https://neuron.yale.edu/neuron/download) (Python v. 3.7.10 and NEURON v. 7.8.1 was used) and [NeuroTools](https://pypi.org/project/NeuroTools/) (v. 0.3.0). Code in ```Fig4``` requires [Tensorflow](https://www.tensorflow.org/install) (v. 2.0.0).
 
-## Figures 2B, 3B and 3C
+## Figures 2B, 3B, 3C, and 5
 
 Simulations use the pyramidal neuron model developed by Wilmes et al. (Wilmes, K. A., Sprekeler, H., & Schreiber, S. (2016). Inhibition as a binary switch for excitatory plasticity in pyramidal neurons. PLoS computational biology, 12(3), e1004768.) and uses code from ModelDB Accession number [187603](https://senselab.med.yale.edu/ModelDB/ShowModel?model=187603#tabs-1). Figure 3 additionally uses code from ModelDB Accession number [185350](https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=185350#tabs-1) to model synapses (Jedlicka, P., Benuskova, L., Abraham, W.C. (2015). A Voltage-Based STDP Rule Combined with Fast BCM-Like Metaplasticity Accounts for LTP and Concurrent "Heterosynaptic" LTD in the Dentate Gyrus In Vivo. PLoS Comput Biol 11, e1004588.
 
 To run simulations, first compile the ```.mod``` files:
 
 ```bash
-cd Fig2BandFigC
+cd Fig2B_Fig3_Fig5
 nrnivmodl mod_files
 ```
 
@@ -33,6 +33,13 @@ python3 run_Fig3BC.py 1 0 0.1 0
 ```
 
 where arguments 1, 0, 0.1, and 0 in the above example are _n__1, _n__2, _α_, and the random seed number, respectively.
+
+To run the simulations for Figure 5, use command
+
+```bash
+python3 run_Fig5.py X
+```
+and replace ```X``` with an integer between 0 and 20, which indexes the parameter to adjust.
 
 ## Figure 2C
 
