@@ -8,7 +8,7 @@
 
 //load_file("nrngui.hoc")
 if(unix_mac_pc() == 3) nrn_load_dll("./_mod/nrnmech.dll")
-load_file("./../_morph/171122005.hoc")
+load_file("./_morph/171122005.hoc")
 load_file("./biophys.hoc")
 load_file("./syns.hoc")
 //load_file("./plots.hoc")

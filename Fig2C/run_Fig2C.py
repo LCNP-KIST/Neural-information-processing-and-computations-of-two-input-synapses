@@ -15,6 +15,7 @@ from config_model_stim import *
 from sim import *
 from htools import *
 from datetime import datetime
+import micalc2
 
 ###  Synaptic mechanism  ###
 #BCM parameters
@@ -44,20 +45,20 @@ print(sys.argv)
 
 try:
     nsyn1 = int(sys.argv[1])
-    qall =  float(sys.argv[2])
-    dcaapw = float(sys.argv[3])    
-    stimw = float(sys.argv[4])
-    trial = int(sys.argv[5])
+    trial =  float(sys.argv[2])
 except IndexError:
-    print('needs arguments')
+    print('Provide two arguments: number of synapses and trial seed')
     sys.exit()
 
-bgw = 1.0
 alpha = 1.0
+qall = 100.0
+dcaapw = 4.0
+stimw = 1.0
+bgw = 1.0
 
 random.seed(trial)
 
-identifier = '%s_%s_%s_%s_%s_%s'%(nsyn1,qall,dcaapw,stimw,bgw,trial)
+identifier = '%s_%s'%(nsyn1,trial)
 savepath = '%s%s'%(path,identifier)
 if os.path.exists("%s/vars.txt"%savepath):
         print("VARS found. terminating.")
@@ -318,14 +319,6 @@ post_spikes = h.Vector()
 spike_detector.record(post_spikes)
 
 # record state vars
-#vit2m, vit2h, vscam, vscah, vkcan, vna3dendm, vna3dendh = [h.Vector() for x in range(7)]
-#vit2m.record(cell.branches[0](0.5).it2._ref_m)
-#vit2h.record(cell.branches[0](0.5).it2._ref_h)
-#vscam.record(cell.branches[0](0.5).sca._ref_m)
-#vscah.record(cell.branches[0](0.5).sca._ref_h)
-#vkcan.record(cell.branches[0](0.5).kca._ref_n)
-#vna3dendm.record(cell.branches[0](0.5).na3dend._ref_m)
-#vna3dendh.record(cell.branches[0](0.5).na3dend._ref_h)
 
 # run simulation
 print("Running simulation")
@@ -334,11 +327,6 @@ print("Done.")
 
 t = np.array(trec)
 v = np.array(vrec)
-#ais = np.array(aisrec)
-#vd = np.array(vdrec)
-#vb = np.array(vbrec)
-#vo = np.array(vorec)
-#vdcaap = np.array(vdcaaprec)
 
 dvs = []
 
@@ -367,19 +355,6 @@ del(sim)
 
 del(trec);del(vrec)
 
-#my_rawdata['t'] = t
-#my_rawdata['v'] = v
-#my_rawdata['vd'] = vd
-#my_rawdata['vb'] = vb
-#my_rawdata['vo'] = vo
-#my_rawdata['it2m'] = it2m
-#my_rawdata['it2h'] = it2h
-#my_rawdata['scam'] = scam
-#my_rawdata['scah'] = scah
-#my_rawdata['kcan'] = kcan
-#my_rawdata['na3dendm'] = na3dendm
-#my_rawdata['na3dendh'] = na3dendh
-
 
 rawdata = {'raw_data': my_rawdata}
 
@@ -388,8 +363,6 @@ Ndat = len(t)
 print('print vars.')
 g=open('%s/vars.txt'%savepath,'w')
 
-#data_arrays = [v,ais,vd,vb,it2m,it2h,scam,scah,na3dendm,na3dendh, bcm_alpha_scount, bcm_p, bcm_d]
-#data_arrays = [v,ais,vd,vb,bcm_alpha_scount, bcm_p, bcm_d, vdcaap]
 data_arrays = [v] #, vdcaap]
 
 for i in range(Ndat):
@@ -400,18 +373,6 @@ for i in range(Ndat):
     lin += '\n'
     g.write(lin)
 g.close()
-
-if trial == 0:
-    print('print dv.')
-    g =open("%s/dv.txt"%savepath,'w')
-    for i in range(Ndat):
-        tt = t[i]
-        lin = "%s"%tt
-        for datar in dvs:
-            lin += "  %s"%datar[i]
-        lin += '\n'
-        g.write(lin)
-    g.close()
 
 print('print pre.')
 for i in range(nsyn):
@@ -447,9 +408,6 @@ for i, post_spikes in enumerate(dend_posts):
     g.close()
 
 
-
-import micalc2
-#total_time = 1000*60*5
 
 g=open("%s/mi.txt"%savepath,'w')
 starti = int(0)

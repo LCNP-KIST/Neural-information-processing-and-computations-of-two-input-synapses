@@ -87,7 +87,6 @@ BEFORE BREAKPOINT {
 			K = 1
 		}
 		dcaap_count = dcaap_count + 1
-		printf("Fired %.0f dCaAP at %f ms with K = %f\n",dcaap_count, t_dCaAP,K)
 	}
 	: B is equal to 0 only when spike is initially triggered.
 	if(B == 0 && t >= t_dCaAP + sigma_diff && w > 0){

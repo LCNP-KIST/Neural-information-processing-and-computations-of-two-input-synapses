@@ -6,7 +6,7 @@ Neural information processing and computations of two-input synapses. _Neural Co
 
 ## Required Installations
 
-The code in ```Fig2BandFigC``` and ```Fig3C``` requires installation of [NEURON](https://neuron.yale.edu/neuron/download) (Python v. 3.7.10 and NEURON v. 7.8.1 was used). Code in ```Fig4``` requires [Tensorflow](https://www.tensorflow.org/install) (v. 2.0.0).
+The code in ```Fig2BandFigC``` and ```Fig3C``` requires installation of [NEURON](https://neuron.yale.edu/neuron/download) (Python v. 3.7.10 and NEURON v. 7.8.1 was used) and [NeuroTools](https://pypi.org/project/NeuroTools/) (v. 0.3.0). Code in ```Fig4``` requires [Tensorflow](https://www.tensorflow.org/install) (v. 2.0.0).
 
 ## Figures 2B, 3B and 3C
 
@@ -42,7 +42,7 @@ To run simulations, first compile the ```.mod``` files:
 
 ```bash
 cd Fig2C
-nrnivmodl mod_files
+nrnivmodl _mod
 ```
 
 ```bash

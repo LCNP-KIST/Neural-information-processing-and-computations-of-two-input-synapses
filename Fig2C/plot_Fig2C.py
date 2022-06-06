@@ -27,7 +27,7 @@ for ni in range(16):
     mili1 = []
     mili2 = []
     for trial in range(1,10):
-        dpath = 'datag6/%s_100.0_4.0_1.0_1.0_%s'%(ni,trial)
+        dpath = 'data/%s_%s'%(ni,trial)
         midat = np.loadtxt('%s/mi.txt'%dpath,delimiter=',')
 
         mili1.append(midat[0,0])
