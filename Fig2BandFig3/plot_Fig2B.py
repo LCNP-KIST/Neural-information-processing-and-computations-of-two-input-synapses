@@ -25,7 +25,7 @@ for q1i, q1 in enumerate(nli):
         mis1 = []
         mis2 = []
         for trial in range(5):
-            midat = np.loadtxt("data_Fig3/%s_%s_%s_%s/mi.txt"%(q1,q2,alpha,gamma,trial), delimiter=',')
+            midat = np.loadtxt("data_Fig3/%s_%s_%s_%s/mi.txt"%(q1,q2,alpha,trial), delimiter=',')
             mis1.append(midat[2,0])  # Get MI from last 10 seconds
             mis2.append(midat[2,1])
     
@@ -137,4 +137,4 @@ ax.plot([0,0.5],[10,10],[0,0],c='black',linewidth=ew)
 #zticks
 ax.plot([15,15-0.5],[0,0],[0.08,0.08],c='black',linewidth=ew)
 
-plt.savefig("Fig3B.png", dpi=250)
+plt.savefig("Fig2B.png", dpi=250)
