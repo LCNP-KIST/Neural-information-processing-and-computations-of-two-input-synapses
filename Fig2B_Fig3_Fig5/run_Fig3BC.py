@@ -59,7 +59,6 @@ BCMSLOW_BCMTHRESHOLD = 0                # Cliff's slowing of BCM rate, 0=no chan
 print("ALPHA_BCMTHRESHOLD = %e\n"%ALPHA_BCMTHRESHOLD)
 PTAU = 20
 DTAU = 70
-gamma = 1.0
 
 DT=0.2 # ms, set the integration step
 
@@ -158,8 +157,7 @@ dsec_list.append(cell.basal_branches[0](1.0/3.0))
 
 if True: #Initialize synapses and hidden state inputs
 
-    bcm = h.BCMthreshold3(cell.soma(0.5))
-    bcm.bcm_scale = gamma
+    bcm = h.BCMthreshold(cell.soma(0.5))
     bcm.p0=P0_BCMTHRESHOLD
     bcm.d0=D0_BCMTHRESHOLD
     bcm.scount0 = SCOUNT0_BCMTHRESHOLD
@@ -358,10 +356,6 @@ vrec.record(cell.soma(0.5)._ref_v)
 #vorec = h.Vector()
 #vorec.record(cell.oblique_branch(0.9)._ref_v)
 #BCM record
-asgrec = h.Vector()
-asgrec.record(bcm._ref_asg)
-asrec = h.Vector()
-asrec.record(bcm._ref_alpha_scount)
 prec = h.Vector()
 prec.record(bcm._ref_p)
 drec = h.Vector()
@@ -378,11 +372,6 @@ print("Done. Writing data...")
 
 t = np.array(trec)
 v = np.array(vrec)
-pp = np.array(prec)
-dd = np.array(drec)
-
-asg = np.array(asgrec)
-alpha_scount = np.array(asrec)
 
 # delete
 del(cell)
@@ -419,41 +408,41 @@ if not only_mi:
     g.close()
     
     # synapse weights
-    g=open('%s/weights.txt'%savepath,'w')
-    
-    for i in range(Ndat):
-        if i%5 !=0: continue
-        tt = t[i]
-        lin = "%s"%tt
-        for w in wli:
-            lin += "  %s"%w[i]
-        lin += '\n'
-        g.write(lin)
-    
-    g.close()
+    #g=open('%s/weights.txt'%savepath,'w')
+    #
+    #for i in range(Ndat):
+    #    if i%5 !=0: continue
+    #    tt = t[i]
+    #    lin = "%s"%tt
+    #    for w in wli:
+    #        lin += "  %s"%w[i]
+    #    lin += '\n'
+    #    g.write(lin)
+    #
+    #g.close()
     
     # synapse conductances (just one)
-    g=open('%s/syng.txt'%savepath,'w')
-    
-    for i in range(Ndat):
-        if i%5 !=0: continue
-        tt = t[i]
-        lin = "%s"%tt
-        for sg in gli:
-            lin += "  %s"%sg[i]
-        lin += '\n'
-        g.write(lin)
-    
-    g.close()
+    #g=open('%s/syng.txt'%savepath,'w')
+    #
+    #for i in range(Ndat):
+    #    if i%5 !=0: continue
+    #    tt = t[i]
+    #    lin = "%s"%tt
+    #    for sg in gli:
+    #        lin += "  %s"%sg[i]
+    #    lin += '\n'
+    #    g.write(lin)
+    #
+    #g.close()
     
     #presynaptic spike times
-    for i in range(2):
-        posts=psli[i]
-        g = open('%s/pre_%s.txt'%(savepath,i+1),'w')
-        for ps in posts:
-            g.write('%s\n'%ps)
-    
-        g.close()
+    #for i in range(2):
+    #    posts=psli[i]
+    #    g = open('%s/pre_%s.txt'%(savepath,i+1),'w')
+    #    for ps in posts:
+    #        g.write('%s\n'%ps)
+    #
+    #    g.close()
     
     #dendrite membrane potential
     #for i in range(len(dend_list)):
@@ -472,13 +461,6 @@ if not only_mi:
         except IndexError:
             break
     
-    g.close()
-    
-    g=open("%s/asg.txt"%savepath,'w')
-    for i in range(Ndat):
-        try: g.write("%s  %s  %s  %s  %s\n"%(t[i],alpha_scount[i],asg[i],pp[i],dd[i]))
-        except IndexError:
-            break
     g.close()
 
 import micalc2

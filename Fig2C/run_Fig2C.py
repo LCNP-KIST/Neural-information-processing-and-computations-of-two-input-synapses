@@ -374,38 +374,38 @@ for i in range(Ndat):
     g.write(lin)
 g.close()
 
-print('print pre.')
-for i in range(nsyn):
-    posts=psli[i]
-    g = open('%s/pre_%s.txt'%(savepath,i+1),'w')
-    for ps in posts:
-        g.write('%s\n'%ps)
+#print('print pre.')
+#for i in range(nsyn):
+#    posts=psli[i]
+#    g = open('%s/pre_%s.txt'%(savepath,i+1),'w')
+#    for ps in posts:
+#        g.write('%s\n'%ps)
+#
+#    g.close()
 
-    g.close()
+#print('print x1.')
+#g=open("%s/x_state.txt"%savepath,'w')
+#
+#print(Ndat, len(x1_state))
+#for i in range(Ndat):
+#    try: g.write("%s  %s  %s\n"%(t[i],x1_state[i],x2_state[i]))
+#    except IndexError:
+#        break
+#
+#g.close()
 
-print('print x1.')
-g=open("%s/x_state.txt"%savepath,'w')
-
-print(Ndat, len(x1_state))
-for i in range(Ndat):
-    try: g.write("%s  %s  %s\n"%(t[i],x1_state[i],x2_state[i]))
-    except IndexError:
-        break
-
-g.close()
-
-g = open('%s/post_soma.txt'%savepath,'w')
-for ps in post_spikes:
-    g.write('%s\n'%ps)
-
-g.close()
-
-for i, post_spikes in enumerate(dend_posts):
-    g = open('%s/post_d%s.txt'%(savepath,i),'w')
-    for ps in post_spikes:
-        g.write('%s\n'%ps)
-    
-    g.close()
+#g = open('%s/post_soma.txt'%savepath,'w')
+#for ps in post_spikes:
+#    g.write('%s\n'%ps)
+#
+#g.close()
+#
+#for i, post_spikes in enumerate(dend_posts):
+#    g = open('%s/post_d%s.txt'%(savepath,i),'w')
+#    for ps in post_spikes:
+#        g.write('%s\n'%ps)
+#    
+#    g.close()
 
 
 
