@@ -25,14 +25,14 @@ To run simulations for Figure 2B, use command
 python3 run_Fig2B.py 1 0
 ```
 
-where arguments 1 and 0 in the above example are _n_ and the random seed number, respectively.
+where arguments ```1``` and ```0``` in the above example are the number of synapses _n_ and the random seed number, respectively.
 To run the simulation for Figure 3, use command
 
 ```bash
 python3 run_Fig3BC.py 1 2 0.1 0
 ```
 
-where arguments 1, 2, 0.1, and 0 in the above example are n_1, n_2, _α_, and the random seed number, respectively.
+where arguments ```1```, ```2```, ```0.1```, and ```0``` in the above example are n_1, n_2, _α_, and the random seed number, respectively.
 
 To run the simulations for Figure 5, use command
 
@@ -52,10 +52,12 @@ cd Fig2C
 nrnivmodl _mod
 ```
 
+The use command
 ```bash
 python3 run_Fig2C.py 1 0
 ```
+where the first argument ```1``` is _n_ and ```0``` is the random seed number in the above example. Use the script ```plot_Fig2C.py``` to plot the figure.
 
 ## Figure 4
 
-This code trains autoencoders based on the architecture of Hinton & Salakhutdinov (Hinton, G. E., & Salakhutdinov, R. R. (2006). Reducing the dimensionality of data with neural networks. Science, 313(5786), 504-507.) with a mixture of neurons with two types of activation functions described in the paper. The model is trained on the [Fashion MNIST dataset](https://github.com/zalandoresearch/fashion-mnist). To train and evaluate the model, run the Juptyer notebook ```Fig4/Fig4B.ipynb```.
+This code trains autoencoders based on the architecture of Hinton & Salakhutdinov (Hinton, G. E., & Salakhutdinov, R. R. (2006). _Science_, 313:504-507.) with a mixture of neurons with two types of activation functions described in the paper. The model is trained on the [Fashion MNIST dataset](https://github.com/zalandoresearch/fashion-mnist). To train and evaluate the model, run the Juptyer notebook ```Fig4/Fig4B.ipynb```.
