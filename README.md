@@ -10,7 +10,7 @@ The code in ```Fig2B_Fig3_Fig5``` and ```Fig3C``` requires installation of [NEUR
 
 ## Figures 2B, 3B, 3C, and 5
 
-Simulations use the pyramidal neuron model developed by Wilmes et al. (Wilmes, K. A., Sprekeler, H., & Schreiber, S. (2016). _PLoS computational biology_, 12(3), e1004768.) and uses code from ModelDB Accession number [187603](https://senselab.med.yale.edu/ModelDB/ShowModel?model=187603#tabs-1). Figure 3 additionally uses code from ModelDB Accession number [185350](https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=185350#tabs-1) to model synapses (Jedlicka, P., Benuskova, L., Abraham, W.C. (2015). _PLoS Comput Biol_ 11, e1004588).
+Simulations are based on the pyramidal neuron model developed by Wilmes et al. (Wilmes, K. A., Sprekeler, H., & Schreiber, S. (2016). _PLoS computational biology_, 12(3), e1004768.) and uses code from ModelDB Accession number [187603](https://senselab.med.yale.edu/ModelDB/ShowModel?model=187603#tabs-1). Figure 3 additionally uses code from ModelDB Accession number [185350](https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=185350#tabs-1) to model synapses (Jedlicka, P., Benuskova, L., Abraham, W.C. (2015). _PLoS Comput Biol_ 11, e1004588).
 
 To run simulations, first compile the ```.mod``` files:
 
@@ -43,7 +43,7 @@ and replace ```X``` with an integer between 0 and 20, which indexes the paramete
 
 ## Figure 2C
 
-Simulations of the pyramidal neuron model developed by Gidon et al. (Gidon, A., Zolnik, T. A., Fidzinski, P., Bolduan, F., Papoutsi, A., Poirazi, P., ... & Larkum, M. E. (2020). _Science_, 367:83-87) and uses code from ModelDB Accession number [254217](https://senselab.med.yale.edu/ModelDB/ShowModel?model=254217#tabs-1).
+Simulations are based on the human neocortical L2/3 pyramidal neuron model developed by Gidon et al. (Gidon, A., Zolnik, T. A., Fidzinski, P., Bolduan, F., Papoutsi, A., Poirazi, P., ... & Larkum, M. E. (2020). _Science_, 367:83-87) and uses code from ModelDB Accession number [254217](https://senselab.med.yale.edu/ModelDB/ShowModel?model=254217#tabs-1).
 
 To run simulations, first compile the ```.mod``` files:
 
